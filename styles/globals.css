@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+
+* {
+    box-sizing: border-box;
+  }
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  color: #7C7575;
+  background-color: #FBF0F0;
+}
+
+.cartAnimation {
+  animation: slide-down 300ms ease-out forwards;
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-3rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer components {
+  .modal {
+    @apply w-[90%] left-[5%] sm:w-[80%] sm:left-[10%] md:w-[70%] md:left-[15%] lg:w-[60%] lg:left-[20%];
+  }
+  .form {
+    @apply w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%] mx-auto my-12 p-8 flex flex-col border border-[#7C7575] bg-[#DFD3D3] rounded-md space-y-4;
+  }
+  .input {
+    @apply p-2 text-black border-none outline-none;
+  }
+  .message {
+    @apply text-center p-2 rounded-sm bg-[#7C7575] text-white;
+  }
+
+  .checkout-input {
+    @apply w-full border outline-none border-blue-400 p-2 focus:border-blue-600 focus:bg-gray-200 rounded-md text-black;
+  }
+
+  .invalid {
+    @apply !border-red-600;
+  }
+
+  .valid {
+    @apply !border-green-600;
+  }
+}
